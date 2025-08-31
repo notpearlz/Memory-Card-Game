@@ -1,7 +1,7 @@
-function StartGame(){
+function StartGame({updateGameStatus}){
     return (
         <>
-            <button>Start Game</button>
+            <button onClick={updateGameStatus}>Start Game</button>
         </>
     )
 }

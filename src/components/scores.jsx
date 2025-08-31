@@ -1,25 +1,25 @@
-function TopScore(){
+function TopScore({topScore}){
     return (
         <div>
-            <p>Top Score</p>
+            <p>Top Score {topScore}</p>
         </div>
     )
 }
 
-function CurrentScore(){
+function CurrentScore({currentScore}){
     return (
         <div>
-            <p>Current Score</p>
+            <p>Current Score: {currentScore}</p>
         </div>
     )
 }
 
 
-function Scores(){
+function Scores({currentScore, topScore }){
     return (
         <div>
-            <CurrentScore />
-            <TopScore />
+            <CurrentScore currentScore={currentScore}/>
+            <TopScore topScore={topScore}/>
         </div>
     )
 }

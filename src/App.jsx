@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 import Header from './components/header'
 import StartGame from './components/startGame'
@@ -10,11 +10,15 @@ import './App.css'
 
 
 function App() {
-  const [gameStatus, setGameStatus] = useState('Start')
+  const [currentScore, setCurrenstScore] = useState(0);
+  const [topScore, setTopScore] = useState(0);
 
+  const [gameStatus, setGameStatus] = useState('Start');
+
+  
   function updateGameStatus(){
     if(gameStatus == 'Start'){
-      setGameStatus('Game')
+      setGameStatus('Game');
     } else if (gameStatus == 'Game'){
 
     }
@@ -23,11 +27,13 @@ function App() {
 
 
   return (
-    <div class='app'>
-      <Header />
+    <div className='app'>
+      <Header currentScore={currentScore} topScore={topScore}/>
 
-      {gameStatus == 'Start' && <StartGame />}
+
+      {gameStatus == 'Start' && <StartGame updateGameStatus={updateGameStatus}/>}
       {gameStatus == 'Game' && <Game />}
+
       <Footer />
     </div>
   )

@@ -2,12 +2,12 @@ import Scores from './scores'
 
 import '../styles/header.css'
 
-function Header(){
+function Header({currentScore, topScore}){
     return (
         <header>
             <h1>Header</h1>
 
-            <Scores />
+            <Scores currentScore={currentScore} topScore={topScore}/>
         </header>
     )
 }
