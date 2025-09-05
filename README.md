@@ -1,5 +1,10 @@
 # React + Vite
 
+This is a memory card game. Click on a card once and ONLY once. If a card is clicked on multiple times you lose.
+
+
+
+
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:
