@@ -15,9 +15,20 @@ function Game(){
                 for(let i = 0; i < cards.length; i++){
                     const card = newCards[i]
                     if(!card.url){
-                        const response = await fetch(`https://api.giphy.com/v1/gifs/translate?api_key=${apiKey}&s=${card.val}`, {mode: 'cors'})
-                        const gifData = await response.json()
-                        card.url = gifData.data.images.original.url;
+                        const response = await fetch(`https://api.api-ninjas.com/v1/randomimage`, {
+                            mode: 'cors',
+                            headers: {
+                                'X-Api-Key': apiKey,
+                                'Accept': 'image/jpg'
+
+                            },
+                        })
+                        .then(response => response.blob())
+                        .then(blob => {
+                            const data = URL.createObjectURL(blob);
+                            card.url = data;
+
+                        })
                     }
 
                 }

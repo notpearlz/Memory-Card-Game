@@ -1,12 +1,12 @@
 const cardData = [
     {
         id: 0,
-        val: "jotarokujo",
+        val: "card0",
         url: null
     },
     {
         id: 1,
-        val: "jonathanjoestar",
+        val: "card1",
         url: null
     },
     {
