@@ -5,6 +5,7 @@ import '../styles/game.css'
 
 function Game({addScore, resetScore}){
     const apiKey = import.meta.env.VITE_APIKEY
+    const [isLoading, setLoading] = useState(true)
     const [cards, setCards] = useState(cardData)
     const [seenCards, setSeenCards] = useState(new Set())
 
@@ -33,6 +34,7 @@ function Game({addScore, resetScore}){
 
                 }
                 setCards(newCards)
+                setLoading(false);
             }
             catch (error) {
                 console.log("ERRORERRORERRORERRORERRORERRORERRORERRORERRORERRORERRORERRORERRORERRORERROR", error)
@@ -92,15 +94,18 @@ function Game({addScore, resetScore}){
     }
 
     return (
-        <main>
-        
-        {cards.map((card,index)=> {
-                return <div  key={"div-" + card.val}>
-                    <img onClick={clickCard} className='card' src={card.url} data-id={card.id} key={card.id}/>
-                    </div>
-            })}
- 
-        </main>
+        <>
+            {!isLoading && <div className='game'>
+            
+                {cards.map((card,index)=> {
+                    return <div  className='card-container' key={"div-" + card.val}>
+                        <img onClick={clickCard} className='card' src={card.url} data-id={card.id} key={card.id}/>
+                        </div>
+                })}
+    
+            </div>}
+            {isLoading && <h1>Loading...</h1>}
+        </>
     )
 }
 

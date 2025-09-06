@@ -1,9 +1,17 @@
-main {
+
+.game {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 10px;
 }
 
 .card {
+    border: 1px solid #000000;
     height: 100px;
+}
+.card:hover {
+    opacity: 70%;
+}
+.card:active {
+    opacity: 30%;
 }

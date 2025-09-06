@@ -1,0 +1,14 @@
+footer {
+    display: flex;
+    justify-content: center;
+    background-color: var(--tertiary-color);
+
+    border-top: 2px solid var(--secondary-color);
+
+}
+
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+}

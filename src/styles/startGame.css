@@ -1,0 +1,11 @@
+
+
+button {
+    padding: 50px 100px;
+    background-color: var(--tertiary-color);
+    border-color: var(--secondary-color);
+}
+
+button:hover {
+    background-color: var(--primary-color);
+}

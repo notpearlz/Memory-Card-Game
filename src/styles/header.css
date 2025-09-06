@@ -2,4 +2,6 @@ header {
     display: flex;
     justify-content: space-between;
     padding: 0 10vw;
+    background-color: var(--tertiary-color);
+    border-bottom: 2px solid var(--secondary-color);
 }

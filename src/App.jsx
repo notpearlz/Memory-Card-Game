@@ -44,10 +44,10 @@ function App() {
     <div className='app'>
       <Header currentScore={currentScore} topScore={topScore}/>
 
-
-      {gameStatus == 'Start' && <StartGame updateGameStatus={updateGameStatus}/>}
-      {gameStatus == 'Game' && <Game addScore={addScore} resetScore={resetScore} />}
-
+      <main>
+        {gameStatus == 'Start' && <StartGame updateGameStatus={updateGameStatus}/>}
+        {gameStatus == 'Game' && <Game addScore={addScore} resetScore={resetScore} />}
+      </main>
       <Footer />
     </div>
   )

@@ -1,0 +1,19 @@
+:root {
+    --secondary-color: #E7ECEF;
+    --primary-color: #274C77;
+    --tertiary-color: #6096BA;
+
+
+}
+
+:root,
+body,
+#root,
+.app {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    background-color: var(--primary-color);
+}
