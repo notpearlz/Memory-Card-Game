@@ -15,6 +15,20 @@ function App() {
 
   const [gameStatus, setGameStatus] = useState('Start');
 
+
+  useEffect(()=>{
+    if(currentScore >= topScore){
+      setTopScore(currentScore);
+    }
+  }, [currentScore])
+  function addScore(){
+    setCurrenstScore(currentScore+1);
+
+  }
+  function resetScore(){
+
+    setCurrenstScore(0);
+  }
   
   function updateGameStatus(){
     if(gameStatus == 'Start'){
@@ -32,7 +46,7 @@ function App() {
 
 
       {gameStatus == 'Start' && <StartGame updateGameStatus={updateGameStatus}/>}
-      {gameStatus == 'Game' && <Game />}
+      {gameStatus == 'Game' && <Game addScore={addScore} resetScore={resetScore} />}
 
       <Footer />
     </div>

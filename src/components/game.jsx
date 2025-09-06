@@ -3,7 +3,7 @@ import cardData  from './cardData'
 
 import '../styles/game.css'
 
-function Game(){
+function Game({addScore, resetScore}){
     const apiKey = import.meta.env.VITE_APIKEY
     const [cards, setCards] = useState(cardData)
     const [seenCards, setSeenCards] = useState(new Set())
@@ -57,9 +57,15 @@ function Game(){
             }
         })
 
+        //Set scores and shuffle cards
         if(!seen){
             shuffle();
-        } else {
+            addScore();
+        } else { 
+            // reset scores and reset cards
+            setSeenCards(new Set());
+            resetScore();
+            shuffle();
 
         }
     }
@@ -68,6 +74,7 @@ function Game(){
     function shuffle() {
         let tempArr = [...cards];
         let currentIndex = 0;
+
 
 
         // While there remain elements to shuffle...
